@@ -1,0 +1,31 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon" />
+    <title>Marine Stewardship Council | {{page}}</title>    
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    {{!--<link rel="stylesheet" type="text/css" href="https://services.postcodeanywhere.co.uk/css/address-3.40.css">--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://use.typekit.net/ois1eqb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  </head>
+  <body id="{{page}}" class="{{page}}">
+        <div id="wrapper" class="wrapper">
+            {{!--{{> header}}--}}
+            <div id="main">
+                {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+                {{> body}}
+            </div>
+            {{> footer }}
+        </div>
+    <script src="{{root}}assets/js/vendor.js"></script>
+    {{!--<script type="text/javascript" src="https://services.postcodeanywhere.co.uk/js/address-3.40.min.js"></script>--}}
+    <script src="{{root}}assets/js/app.js"></script>
+  </body>
+</html>

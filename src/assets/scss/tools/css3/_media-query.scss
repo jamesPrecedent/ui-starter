@@ -1,0 +1,44 @@
+// Inline media queries
+
+// Example
+// @include breakpoint(tablet-and-desktop){}
+
+@mixin media-query($breakpoint) {
+
+  @if $breakpoint == tablet {
+   @media all and (min-width: em(768px)) and (max-width: em(1024px)) { @content; }
+  }
+  @if $breakpoint == tablet-port {
+  /* Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { @content; }    
+  }  
+  @else if $breakpoint == tablet-and-desktop {
+   //@media all and (min-width: em(768px)) { @content; } 
+   @media all and (min-width: em(890px)) { @content; } 
+   // .no-csscolumns & { @content; } 
+  }
+  @else if $breakpoint == mobile {
+   //@media all and (max-width: em(640px)) { @content; } 
+   @media all and (max-width: em(640px)) { @content; } 
+   //.no-csscolumns & { @content; } 
+  }
+
+
+  // **********  Migrating towards these breakpoints ********** 
+  @else if $breakpoint == phablet {
+   @media all and (min-width: em(640px)) { @content; }   
+   // .no-csscolumns & { @content; } 
+  }
+  @else if $breakpoint == desktop {
+   @media all and (min-width: em(929px)) { @content; }   
+   // .no-csscolumns & { @content; } 
+  }
+
+  
+
+  @else if $breakpoint == widescreen {
+   @media all and (min-width: em(1440px)) { @content; }  
+   // .no-csscolumns & { @content; }    
+  }
+
+}

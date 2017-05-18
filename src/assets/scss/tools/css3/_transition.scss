@@ -1,0 +1,15 @@
+@mixin transition($value...) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin transition-with-prefix($value...) {
+  -webkit-transition: -webkit-#{$value};
+  -moz-transition: -moz-#{$value};
+  -ms-transition: -ms-#{$value};
+  -o-transition: -o-#{$value};
+  transition: #{$value};
+}
